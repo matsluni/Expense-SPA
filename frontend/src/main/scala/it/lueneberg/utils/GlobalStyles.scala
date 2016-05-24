@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package it.lueneberg.no
+package it.lueneberg.utils
 
-package object idea {
+import scalacss.Defaults._
 
-  type Traversable[+A] = scala.collection.immutable.Traversable[A]
-  type Iterable[+A] = scala.collection.immutable.Iterable[A]
-  type Seq[+A] = scala.collection.immutable.Seq[A]
-  type IndexedSeq[+A] = scala.collection.immutable.IndexedSeq[A]
+object GlobalStyles extends StyleSheet.Inline {
+  import dsl._
+
+  style(unsafeRoot("body")(
+    paddingTop(50.px)
+  ))
+
+  val bootstrapStyles = new BootstrapStyles
 }
